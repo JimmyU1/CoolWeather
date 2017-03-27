@@ -46,7 +46,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.weather_layout);
 
         weatherInfoLayout = (LinearLayout) findViewById(R.id.weather_info_layout);
@@ -162,7 +161,8 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         cityNameText.setText(preferences.getString("city_name",""));
         temp1Text.setText(preferences.getString("temp1",""));
         temp2Text.setText(preferences.getString("temp2",""));
-        weatherDespText.setText("今天" + preferences.getString("weather_desp","") + "发布");
+        publishText.setText("今天" + preferences.getString("publish_time","")+ "发布");
+        weatherDespText.setText(preferences.getString("weather_desp",""));
         currentDateText.setText(preferences.getString("current_date",""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
